@@ -96,10 +96,7 @@ int main(void)
 
         for(size_t m = 2; m < tail_size; m++) {
             if (SDL_HasRectIntersectionFloat(&player, &tail[m])) {
-                //death = true;
-                
-                apple_x = 30 * arc4random_uniform(16);
-                apple_y = 30 * arc4random_uniform(16);
+                death = true;
             }
         }
 
@@ -157,14 +154,6 @@ int main(void)
             player_y_tick = player_y;
             player_x_tick = player_x;
 
-            /*for (size_t i = tail_size; i > 0; i--) {
-                tail_x[i] = tail_x[i-1];
-                tail_y[i] = tail_y[i-1];
-
-                tail[i] = (SDL_FRect){tail_x[i], tail_y[i], 30, 30};
-                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-                SDL_RenderFillRect(renderer, &tail[i]);
-            }*/
             tick = 0;
         }
 
